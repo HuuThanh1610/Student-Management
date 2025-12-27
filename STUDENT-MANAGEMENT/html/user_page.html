@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/Style_Layout.css">
+    <link rel="stylesheet" href="../css/Style_Feature.css">
+</head>
+
+<body>
+     <!-- Popup confirm log out -->
+     <div class="popup-delete confirm-delete" id="confirmLogout">
+        <!-- <h3 class="title-popup-delete" id="titlePopupDelete"></h3> -->
+         <h3>Are you sure you want to log out?</h3>
+        <!-- <div class="reason-delete">
+            <label for="reason" id="updateSectionReason">Reason:</label>
+            <input type="text" id="reason" name="reason" placeholder="Enter reason delete..">
+        </div> -->
+        <div class="layout-confim">
+            <button class="button button-yes" id="buttonYesLogout" title="YES" onclick="closeConfirmLogout()"><i
+                    class="fa fa-check-square-o"></i></button>
+            <button class="button button-no" title="NO" onclick="closeConfirmLogout()"><i
+                    class="fa fa-times-rectangle-o"></i></button>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+
+            <div class="logo">
+                <a href="index.html"><img src="images/Logo_website.png" alt="Logo Student" class="image-logo"></a>
+            </div>
+
+            <div class="banner">Banner</div>
+        </header>
+
+        <div class="body" id="body">
+            <div class="sidebar">
+                <div class="user-role">
+                    <h4>UserName</h4>
+                    <h5>Role </h5>
+                    <button class="button-logOut" onclick="openConfirmLogout()"><i class="fa fa-sign-out"
+                            style="color: white"></i> Log Out</button>
+                </div>
+                <div class="sidebar-menu">
+                    <ul>
+                        <li><a href="user_page.html" target="_self "><i class="fa fa-dashboard" style="color: #0d47a1"></i>
+                                Dashboard</a></li>
+                        <li><a href="#" target="_self "><i class="fa fa-id-card-o" style="color: #0d47a1"></i>
+                                Profile</a></li>
+                        <li><a href="#" target="_self"><i class="fa fa-calculator" style="color: #0d47a1"></i>
+                                Grade</a></li>
+                        <li><a href="#" target="_self"><i class="fa fa-comment" style="color: #0d47a1"></i>
+                                Feedback</a></li>
+                        <li><a href="#" target="_self"><i class="fa fa-envelope"
+                                    style="color: #0d47a1"></i> Request</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="content">
+                <div>
+                    <h1 style="padding: 10px 0 35px 15px">User</h1>
+                </div>
+                <div class="card-content">
+                    <div class="card-item">Average</div>
+                    <div class="card-item">Total Subject</div>
+                    <div class="card-item">Feedback</div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <p>&copy; Nguyen Huu Thanh</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+<script src="../js/LogOut.js"></script>
+</html>

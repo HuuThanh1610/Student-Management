@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - codingnepalweb.com -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login & Registration Form</title>
+  <!---Custom CSS File--->
+  <link rel="stylesheet" href="../css/Style_Login.css">
+
+</head>
+
+<body>
+  <div class="loading">
+    <div class="loading-image"></div>
+  </div>
+  <div class="container">
+    <input type="checkbox" id="check">
+    <div class="login form">
+      <header>Login</header>
+      <form id="formLogin">
+        <input type="text" id="emailLogin" name="emailLogin" placeholder="Enter your email">
+        <input type="password" id="passWordLogin" name="passWordLogin" placeholder="Enter your password">
+        <div id="message" style="color: red;"></div>
+        <a href="#">Forgot password?</a>
+        <input type="submit" class="button" value="Login">
+      </form>
+      <div class="signup">
+        <span class="signup">Don't have an account?
+          <label for="check" id="checkSignup">Signup</label>
+        </span>
+      </div>
+    </div>
+    <div class="registration form">
+      <header>Signup</header>
+      <form id="formRegister">
+        <input type="text" id="emailRegister" name="emailRegister" placeholder="Enter your email" required>
+        <div id="errorEmail" style="color: red;"></div>
+        <input type="text" id="nameRegister" name="nameRegister" placeholder="Enter your name" required>
+        <div id="errorName" style="color: red;"></div>
+        <input type="password" id="passWordRegister" name="passWordRegister" placeholder="Create a password" required>
+        <div id="errorPassword" style="color: red;"></div>
+        <input type="password" id="confirmPassWordRegister" name="confirmPassWordRegister"
+          placeholder="Confirm your password" required>
+        <div id="errorPasswordConfirm" style="color: red;"></div>
+        <div id="messageRegister" style="color: red;"></div>
+        <input type="submit" class="button" value="Signup">
+      </form>
+      <div class="signup">
+        <span class="signup">Already have an account?
+          <label for="check" id="checkLogin">Login</label>
+        </span>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script src="../js/Authentication.js"></script>
+
+</html>

@@ -1,5 +1,6 @@
 Model\SubjectAPIResponse.class
 StudentServletAPI\GetByStudentID.class
+Authentication\DispatchServlet.class
 ViewModel\StudentView.class
 Model\Grade.class
 TeacherServletAPI\GetByTeacherID.class
@@ -13,6 +14,7 @@ Database\APIResponseStudentFromDB.class
 Database\StudentDatabase.class
 StudentServletAPI\UpdateStudent.class
 ViewModel\GradeView.class
+Model\UserAccountAPIResponse.class
 ClassServletAPI\DeleteClass.class
 Model\ConnectToTrialDB.class
 GradeServletAPI\DeleteGrade.class
@@ -21,14 +23,20 @@ ClassServletAPI\UpdateClass.class
 Model\DropDownListAPIResponse.class
 GradeServletAPI\TestSearchGrade.class
 Model\Teacher.class
+Authentication\LogoutServlet.class
 StudentServletAPI\Cache.class
+Authentication\LoginServlet.class
+Authentication\CommonFunctionAuthentication.class
 GradeServletAPI\CreateGrade.class
 StudentServletAPI\SearchStudent.class
 GradeServletAPI\UpdateGrade.class
+Authentication\RegistrationServlet.class
 StudentServletAPI\CommonFunctionStudent.class
+Database\AuthenticationDatabase.class
 Model\TeacherAPIResponse.class
 ClassServletAPI\CommonFunctionClass.class
 ViewModel\StudentClassView.class
+Filter\AuthFilter.class
 FileIO\ReadFile.class
 Model\Student.class
 ClassServletAPI\GetByClassID.class
@@ -41,8 +49,10 @@ Model\Subject.class
 Database\GradeDatabase.class
 Model\StudentClass.class
 Database\DropDownListData.class
+Model\UserAccount.class
 StudentServletAPI\CreateStudent.class
 StudentServletAPI\DeleteStudent.class
 GradeServletAPI\SearchGrade.class
 FileIO\AppendingObjectOutputStream.class
 Model\Semester.class
+Authentication\CheckCookieServlet.class

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/Style_Layout.css">
+    <link rel="stylesheet" href="../css/Style_Feature.css">
+</head>
+
+<body>
+    <div class="loading">
+        <div class="loading-image"></div>
+    </div>
+
+    <!-- popup form create -->
+    <div class="form-popup" id="formPopupCreate">
+        <form action="/action_page.php" class="form-container">
+            <h2 class="title-form-create-edit">Create a new teacher</h2>
+            <input type="text" id="teacherName" name="teacherName" placeholder="Enter teacher name..">
+            <input type="text" id="identification" name="identificationStudent"
+                placeholder="Enter identification..">
+            <input type="text" id="teacherCode" name="teacherCode" placeholder="Enter teacher code..">
+            <input type="text" id="teacherPhoneNumber" name="teacherPhoneNumber" placeholder="Enter phone number..">
+            <select class="select-option-create none-value" id="genderStudent" name="genderStudent">
+                <option value="">-- Choose gender --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="text" id="addressStudent" name="addressStudent" placeholder="Enter address..">
+            <div class="container-btn-form-edit-create">
+                <button type="submit" value="Submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeFormCreate()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!-- popup form create -->
+
+
+    <!-- popup form edit -->
+    <div class="form-popup" id="formPopupEdit">
+        <form action="/action_page.php" class="form-container">
+            <h2 class="title-form-create-edit">Edit teacher information</h2>
+            <input type="text" id="teacherName" name="teacherName" placeholder="Enter teacher name..">
+            <input type="text" id="identificationStudent" name="identificationStudent"
+                placeholder="Enter identification..">
+            <input type="text" id="teacherCode" name="teacherCode" placeholder="Enter teacher code..">
+            <input type="text" id="teacherPhoneNumber" name="teacherPhoneNumber" placeholder="Enter phone number..">
+            <select class="select-option-create none-value" id="genderStudent" name="genderStudent">
+                <option value="">-- Choose gender --</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+            <input type="text" id="addressStudent" name="addressStudent" placeholder="Enter address..">
+            <div class="container-btn-form-edit-create">
+                <button type="submit" value="Submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" onclick="closeFormEdit()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!-- popup form edit -->
+
+    <!-- Popup Confirm delete  -->
+    <div class="popup-delete confirm-delete" id="confirmDelete">
+        <h3 class="title-popup-delete">Are you sure want to delete this teacher ?</h3>
+        <div class="layout-confim">
+            <button class="button button-yes" title="YES" onclick="closeConfirmDelete()"><i
+                    class="fa fa-check-square-o"></i></button>
+            <button class="button button-no" title="NO" onclick="closeConfirmDelete()"><i
+                    class="fa fa-times-rectangle-o"></i></button>
+        </div>
+    </div>
+    <!-- Popup Confirm delete  -->
+
+    <div class="container">
+        <header class="header">
+
+            <div class="logo">
+                <a href="index.html"><img src="../images/Logo_website.png" alt="Logo Student" class="image-logo"></a>
+            </div>
+
+            <div class="banner"></div>
+        </header>
+
+        <div class="body" id="body">
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li><a href="index.html" target="_self "><i class="fa fa-dashboard" style="color: #0d47a1"></i>
+                                Dashboard</a></li>
+                        <li><a href="student_management.html" target="_self "><i class="fa fa-user"
+                                    style="color: #0d47a1"></i>
+                                Student</a></li>
+                        <li><a href="class_management.html" target="_self"><i class="fa fa-users"
+                                    style="color: #0d47a1"></i>
+                                Class</a></li>
+                        <li><a href="teacher_management.html" target="_self"><i class="fa fa-address-book-o"
+                                    style="color: #0d47a1"></i>
+                                Teacher</a></li>
+                        <li><a href="grade_management.html" target="_self"><i class="fa fa-calculator"
+                                    style="color: #0d47a1"></i>
+                                    Grade</a></li>
+                        <li><a href="subject_management.html" target="_self"><i class="fa fa-cube"
+                                    style="color: #0d47a1"></i>
+                                Subject</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="content">
+
+                <div class="search">
+                    <div class="title-search">
+                        <h1>Search teacher</h1>
+                    </div>
+                    <div class="container-search-student">
+                        <div class="search-item">
+                            <div class="topnav">
+                                <input type="text" placeholder="Enter teacher name..">
+                            </div>
+                        </div>
+                        <div class="search-item">
+                            <div class="topnav">
+                                <input type="text" placeholder="Enter teacher code..">
+                            </div>
+                        </div>
+                        <div class="search-item">
+                            <div class="dropdown-select-option">
+                                <select class="select-option none-value" name="position" id="className">
+                                    <option value="" selected="selected">-- Choose teacher position --</option>
+                                    <option value="Principal">Principal</option>
+                                    <option value="vicePrincipal">Vice Principal</option>
+                                    <option value="Teacher">Teacher</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search-item ">
+                            <button class="button button-submit-search"><i class="fa fa-search"></i> Search</button>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="table-content">
+                    <div class="header-table-information">
+                        <div class="title-table-information">
+                            <h1>Student information</h1>
+                        </div>
+                        <div class="create">
+                            <button class="button button-create" title="Create new student"
+                                onclick="openFormCreate()"><i class="fa fa-plus-square"></i> Create</button>
+                        </div>
+                    </div>
+                    <table id="table-student-infomation" class="table-student-infomation">
+                        <tr>
+                            <th style="width: 5%">No.</th>
+                            <th style="width: 14%">Teacher Code</th>
+                            <th style="width: 20%">Name</th>
+                            <th style="width: 10%">Position</th>
+                            <th style="width: 10%">Gender</th>
+                            <th style="width: 15%">Phone Number</th>
+                            <th style="width: 15%">Address</th>
+                            <th style="width: 25%">Activate</th>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr id="tr-1">
+                            <td>1</td>
+                            <td>TE01</td>
+                            <td>Nguyễn Văn Dũng</td>
+                            <td>Teacher</td>
+                            <td>Male</td>
+                            <td>0745326423</td>
+                            <td>Bình Định</td>
+                            <td>
+                                <button class="button button-edit" title="Edit" id="edit" onclick="openFormEdit()"><i
+                                        class="fa fa-edit"></i></button>
+                                <button class="button button-delete" title="Delete" onclick="openConfirmDelete()"><i
+                                        class="fa fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="paging">
+                    <div class="pagination">
+                        <a href="#">&laquo;</a>
+                        <a href="#" class="take-current-page">1</a>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <a href="#">&raquo;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div>
+                <p>&copy; Nguyen Huu Thanh</p>
+            </div>
+        </footer>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/form.js"></script>
+
+</html>

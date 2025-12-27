@@ -88,6 +88,30 @@
         <servlet-name>DropDownListData</servlet-name>
         <servlet-class>Database.DropDownListData</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>Authentication.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DispatchServlet</servlet-name>
+        <servlet-class>Authentication.DispatchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AuthenticationDatabase</servlet-name>
+        <servlet-class>Database.AuthenticationDatabase</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>Authentication.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <servlet-class>Authentication.RegistrationServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CheckCookieServlet</servlet-name>
+        <servlet-class>Authentication.CheckCookieServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>NewServlet</servlet-name>
         <url-pattern>/NewServlet</url-pattern>
@@ -175,6 +199,30 @@
     <servlet-mapping>
         <servlet-name>DropDownListData</servlet-name>
         <url-pattern>/DropDownListData</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DispatchServlet</servlet-name>
+        <url-pattern>/DispatchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AuthenticationDatabase</servlet-name>
+        <url-pattern>/AuthenticationDatabase</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegistrationServlet</servlet-name>
+        <url-pattern>/RegistrationServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckCookieServlet</servlet-name>
+        <url-pattern>/CheckCookieServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/Style_Layout.css">
+    <link rel="stylesheet" href="../css/Style_Feature.css">
+</head>
+
+<body>
+    <div class="loading">
+        <div class="loading-image"></div>
+    </div>
+
+    <!-- popup form create, edit -->
+    <div class="form-popup" id="formPopupCreate" data-mode="create">
+        <h2 class="title-form-create-edit" id="title-form-create-edit">Create a new student</h2>
+
+        <div class="container-search-in-form-create" id="searchInFormCreate" style="display: none;">
+            <h4> Find students to create mark: </h4>
+            <div class="search-student-form-create">
+                <div>
+                    <label class="search-in-form-popup" for="identification">Identification of Student:</label>
+                    <input type="text" id="identificationSearchForCreate" name="ide-ntificationStudent"
+                        placeholder="Enter identification.." required>
+                </div>
+
+                <button class="button button-search-in-form-create" id="btnSearchFormCreate"><i
+                        class="fa fa-search"></i>Search</button>
+            </div>
+            <p></p>
+        </div>
+
+        <form class="form-container" id="formcontainer">
+
+            <!-- hidden field -->
+            <input type="hidden" id="markID" name="markID">
+
+            <label class="label-form-popup" for="studentName" id="updateSectionStudentName" style="display: none;">Name:</label>
+            <input type="text" id="studentName" style="display: none;" name="studentName" placeholder="Enter student name..">
+
+            <label class="label-form-popup" for="subject">Subject:</label>
+            <select class="select-option-create none-value" id="subject" name="subject">
+                <!-- <option value="">-- Choose subject --</option>
+                <option value="1">Math</option>
+                <option value="2">Biology</option>
+                <option value="3">Chemistry</option>
+                <option value="4">Computer science</option>
+                <option value="5">Physics</option>
+                <option value="6">Literature</option>
+                <option value="7">History</option>
+                <option value="8">Civic Education</option>
+                <option value="9">Geology</option>
+                <option value="10">HisNational Defense Educationtory</option>
+                <option value="11">Physical education</option>
+                <option value="12">English</option> -->
+            </select>
+
+            <label class="label-form-popup" for="mark">Mark:</label>
+            <input type="text" id="mark" name="mark" placeholder="Enter mark..">
+
+            <label class="label-form-popup" for="reason" id="updateSectionReason" >Reason:</label>
+            <input type="text" id="reason" name="reason" placeholder="Enter reason update..">
+
+            <label class="label-form-popup" for="semester">Semester:</label>
+            <select class="select-option-create none-value" id="semester" name="semester" >
+                <!-- <option value="">-- Choose semester --</option>
+                <option value="HK1">HK1</option>
+                <option value="HK2">HK2</option> -->
+            </select>
+
+            <div class="container-btn-form-edit-create">
+                <button type="submit" value="Submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" id="cancelBtn" onclick="closeFormCreate()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!-- popup form create -->
+
+
+
+    <!-- Popup Confirm delete  -->
+    <div class="popup-delete confirm-delete" id="confirmDelete">
+        <h3 class="title-popup-delete" id="titlePopupDelete"></h3>
+        <div class="layout-confim">
+            <button class="button button-yes" id="buttonYesDelete" title="YES" onclick="closeConfirmDelete()"><i
+                    class="fa fa-check-square-o"></i></button>
+            <button class="button button-no" title="NO" onclick="closeConfirmDelete()"><i
+                    class="fa fa-times-rectangle-o"></i></button>
+        </div>
+    </div>
+    <!-- Popup Confirm delete  -->
+
+    <div class="container">
+        <header class="header">
+
+            <div class="logo">
+                <a href="index.html"><img src="../images/Logo_website.png" alt="Logo Student" class="image-logo"></a>
+            </div>
+
+            <div class="banner"></div>
+        </header>
+
+        <div class="body" id="body">
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li><a href="index.html" target="_self "><i class="fa fa-dashboard" style="color: #0d47a1"></i>
+                                Dashboard</a></li>
+                        <li><a href="student_management.html" target="_self "><i class="fa fa-user"
+                                    style="color: #0d47a1"></i>
+                                Student</a></li>
+                        <li><a href="class_management.html" target="_self"><i class="fa fa-users"
+                                    style="color: #0d47a1"></i>
+                                Class</a></li>
+                        <li><a href="teacher_management.html" target="_self"><i class="fa fa-address-book-o"
+                                    style="color: #0d47a1"></i>
+                                Teacher</a></li>
+                        <li><a href="grade_management.html" target="_self"><i class="fa fa-calculator"
+                                    style="color: #0d47a1"></i>
+                                Grade</a></li>
+                        <li><a href="subject_management.html" target="_self"><i class="fa fa-cube"
+                                    style="color: #0d47a1"></i>
+                                Subject</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="content">
+                <div class="search">
+                    <div class="title-search">
+                        <h1>Search grade</h1>
+                    </div>
+                    <div class="container-search-grade">
+                        <div class="search-item">
+                            <div class="topnav">
+                                <input type="text" name="studentName" id="searchStudentName"
+                                    placeholder="Enter student name..">
+                            </div>
+                        </div>
+                        <div class="search-item">
+                            <div class="dropdown-select-option">
+                                <select class="select-option none-value" name="className" id="searchClassName">
+                                    <!-- <option value="" selected="selected">-- Choose class name --</option>
+                                    <option value="10A1">10A1</option>
+                                    <option value="10A2">10A2</option>
+                                    <option value="10A3">10A3</option>
+                                    <option value="10A4">10A4</option> -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-item">
+                            <div class="dropdown-select-option">
+                                <select class="select-option none-value" name="subject" id="searchSubject">
+                                    <!-- <option value="" selected="selected">-- Choose subject --</option>
+                                    <option value="1">Math</option>
+                                    <option value="6">Literature</option>
+                                    <option value="12">English</option> -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-item ">
+                            <div class="dropdown-select-option">
+                                <select class="select-option none-value" name="semester" id="searchSemester">
+                                    <!-- <option value="" selected="selected">-- Choose semester --</option>
+                                    <option value="HK1">HK1</option>
+                                    <option value="HK2">HK2</option> -->
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="search-item ">
+                            <div class="dropdown-select-option">
+                                <select class="select-option none-value" name="schoolYear" id="searchSchoolYear">
+                                    <!-- <option value="">-- Choose school year --</option>
+                                    <option value="2018-2019">2018-2019</option>
+                                    <option value="2019-2020">2019-2020</option>
+                                    <option value="2020-2021">2020-2021</option>
+                                    <option value="2021-2022">2021-2022</option>
+                                    <option value="2022-2023">2022-2023</option>
+                                    <option value="2023-2024">2023-2024</option>
+                                    <option value="2024-2025">2024-2025</option> -->
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-item location-button-search">
+                            <button class="button button-submit-search" id="btnSearch"><i class="fa fa-search"></i>
+                                Search</button>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="table-content">
+                    <div class="header-table-information">
+                        <div class="title-table-information">
+                            <h1>Grade of student</h1>
+                        </div>
+                        <div class="create">
+                            <button class="button button-create" title="Create a new class"
+                                onclick="openFormCreate('Create a new mark','')"><i class="fa fa-plus-square"></i>
+                                Create</button>
+                        </div>
+                    </div>
+
+                    <table id="table-student-infomation" class="table-student-infomation">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%">No.</th>
+                                <th style="width: 10%">Class</th>
+                                <!-- <th style="width: 15%">Identification</th> -->
+                                <th style="width: 20%">Name</th>
+                                <th style="width: 15%">Subject</th>
+                                <th style="width: 10%">Mark</th>
+                                <th style="width: 10%">Semester</th>
+                                <th style="width: 15%">School year</th>
+                                <th style="width: 25%">Activate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+                <div class="paging">
+                    <div class="pagination" id="pagination"></div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div>
+                <p>&copy; Nguyen Huu Thanh</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="../js/mark_management.js"></script>
+<script src="../js/pagination_mark_management.js"></script>
+
+</html>

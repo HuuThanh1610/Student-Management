@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/Style_Layout.css">
+    <link rel="stylesheet" href="../css/Style_Feature.css">
+</head>
+
+<body>
+    <div class="loading">
+        <div class="loading-image"></div>
+    </div>
+
+    <!-- popup form create, edit -->
+    <div class="form-popup" id="formPopupCreate">
+        <h2 class="title-form-create-edit" id="title-form-create-edit">Create a new student</h2>
+        <form class="form-container" id="formcontainer" data-mode="create">
+            <!-- hidden field -->
+            <input type="hidden" id="studentID" name="studentID">
+
+            <label class="label-form-popup" for="studentName">Name:</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter student name.." required>
+
+            <label class="label-form-popup" for="identification">Identification:</label>
+            <input type="text" id="identification" name="identificationStudent"
+                placeholder="Enter student identification.." required>
+
+            <label class="label-form-popup" for="email">Email:</label>
+            <input type="text" id="email" name="studetEmail" placeholder="Enter mail of student.." required>
+
+            <label class="label-form-popup" for="genderStudent">Gender:</label>
+            <select class="select-option-create none-value" id="genderStudent" name="genderStudent">
+                <option value="" selected="selected">-- Choose gender --</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label class="label-form-popup" for="className">Class:</label>
+            <select class="select-option-create " name="className" id="className">
+                <!-- <option value="" selected="selected">-- Choose a class name --</option>
+                <option value="10A1">10A1</option>
+                <option value="10A2">10A2</option>
+                <option value="10A3">10A3</option>
+                <option value="10A4">10A4</option>
+                <option value="10A5">10A5</option> -->
+            </select>
+
+            <label class="label-form-popup" for="schoolYear">School year:</label>
+            <select class="select-option-create none-value" id="schoolYear" name="schoolYear">
+                <!-- <option value="" selected="selected">-- Choose school year --</option>
+                <option value="2018-2019">2018-2019</option>
+                <option value="2019-2020">2019-2020</option>
+                <option value="2020-2021">2020-2021</option>
+                <option value="2021-2022">2021-2022</option>
+                <option value="2022-2023">2022-2023</option>
+                <option value="2023-2024">2023-2024</option>
+                <option value="2024-2025">2024-2025</option> -->
+            </select>
+
+            <label class="label-form-popup" for="addressStudent">Address:</label>
+            <input type="text" id="addressStudent" name="addressStudent" placeholder="Enter address of student.."
+                required>
+
+            <label class="label-form-popup" for="phoneNumber">Phone:</label>
+            <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number.." required>
+
+            <label class="label-form-popup" for="birthday">Birthday:</label>
+            <input class="birthday" type="date" id="dateOfBirthStudent" name="DateOfBirthStudent"
+                placeholder="Enter birthday.." required>
+
+            <div class="container-btn-form-edit-create">
+                <button type="submit" value="Submit" class="btn">Submit</button>
+                <button type="button" class="btn cancel" id="cancelBtn" onclick="closeFormCreate()">Cancel</button>
+            </div>
+        </form>
+    </div>
+    <!-- popup form create, update -->
+
+    <!-- Popup Confirm delete  -->
+    <div class="popup-delete confirm-delete" id="confirmDelete">
+        <h3 class="title-popup-delete" id="titlePopupDelete"></h3>
+        <div class="reason-delete">
+            <label for="reason" id="updateSectionReason">Reason:</label>
+            <input type="text" id="reason" name="reason" placeholder="Enter reason delete..">
+        </div>
+        <div class="layout-confim">
+            <button class="button button-yes" id="buttonYesDelete" title="YES" onclick="closeConfirmDelete()"><i
+                    class="fa fa-check-square-o"></i></button>
+            <button class="button button-no" title="NO" onclick="closeConfirmDelete()"><i
+                    class="fa fa-times-rectangle-o"></i></button>
+        </div>
+    </div>
+    <!-- Popup Confirm delete  -->
+
+    <!-- Popup notification -->
+
+    <!-- Popup notification -->
+
+
+
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+
+            <!-- Logo -->
+            <div class="logo">
+                <a href="index.html"><img src="../images/Logo_website.png" alt="Logo Student" class="image-logo"></a>
+            </div>
+
+            <!-- Banner -->
+            <div class="banner"></div>
+        </header>
+
+        <!-- Body -->
+        <div class="body" id="body">
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li><a href="index.html" target="_self "><i class="fa fa-dashboard"
+                                    style="color: #0d47a1"></i> Dashboard</a></li>
+                        <li><a href="student_management.html" target="_self "><i class="fa fa-user"
+                                    style="color: #0d47a1"></i>
+                                Student</a></li>
+                        <li><a href="class_management.html" target="_self"><i class="fa fa-users"
+                                    style="color: #0d47a1"></i>
+                                Class</a></li>
+                        <li><a href="teacher_management.html" target="_self"><i class="fa fa-address-book-o"
+                                    style="color: #0d47a1"></i>
+                                Teacher</a></li>
+                        <li><a href="grade_management.html" target="_self"><i class="fa fa-calculator"
+                                    style="color: #0d47a1"></i>
+                                Grade</a></li>
+                        <li><a href="subject_management.html" target="_self"><i class="fa fa-cube"
+                                    style="color: #0d47a1"></i>
+                                Subject</a></li>
+
+                    </ul>
+                </div>
+
+            </div>
+            <!-- Body Content -->
+            <div class="content">
+                <!-- Search -->
+                <div class="search">
+                    <div class="title-search">
+                        <h1>Search student</h1>
+                    </div>
+                    <div class="container-search-student" id="container-search-student">
+                        <div class="search-item">
+                            <div class="topnav">
+                                <input type="text" id="searchStudentName" placeholder="Enter student name..">
+                            </div>
+                        </div>
+                        <div class="search-item">
+                            <div class="topnav">
+                                <input type="text" id="searchIdentification" placeholder="Enter identification..">
+                            </div>
+                        </div>
+
+                        <div class="search-item">
+                            <div class="dropdown-select-option">
+                                <select class="select-option none-value" name="searchClassName" id="searchClassName">
+                                    <!-- <option value="" selected="selected">-- Choose class name --</option>
+                                    <option value="10A1">10A1</option>
+                                    <option value="10A2">10A2</option>
+                                    <option value="10A3">10A3</option>
+                                    <option value="10A4">10A4</option>
+                                    <option value="10A5">10A5</option> -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search-item ">
+                            <button class="button button-submit-search" id="btnSearch"><i class="fa fa-search"></i>
+                                Search</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Table information -->
+                <div class="table-content">
+                    <div class="header-table-information">
+                        <div class="title-table-information">
+                            <h1>Student information</h1>
+                        </div>
+                        <div class="create">
+                            <button class="button button-create" title="Create new student"
+                                onclick="openFormCreate('Create new a student','','')"><i class="fa fa-plus-square"></i>
+                                Create</button>
+                        </div>
+                    </div>
+                    <table id="table-student-infomation" class="table-student-infomation">
+                        <thead>
+                            <tr>
+                                <th style="width: 5%">No.</th>
+                                <th style="width: 10%">Class</th>
+                                <th style="width: 15%">Identification</th>
+                                <th style="width: 20%">Name</th>
+                                <th style="width: 10%">Gender</th>
+                                <th style="width: 15%">DateOfBirth</th>
+                                <th style="width: 25%">Activate</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body"></tbody>
+                    </table>
+                </div>
+
+                <!-- Paging -->
+                <div class="paging">
+                    <div class="pagination" id="pagination">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div>
+                <p>&copy; Nguyen Huu Thanh</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+<script src="../js/student_management.js"></script>
+<script src="../js/pagination_student_management.js"></script>
+
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/Style_Layout.css">
+    <link rel="stylesheet" href="../css/Style_Feature.css">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="index.html"><img src="../images/Logo_website.png" alt="Logo Student" class="image-logo"></a>
+            </div>
+            <div class="banner">
+                <div class="userAccount">
+                    <div class="dropdownAccount">
+                        <button onclick="openUserAccount()" class="dropbtnAccount"><i class="fa fa-user-circle-o"
+                                aria-hidden="true" style="font-size: larger;"></i> User Account <i
+                                class="fa fa-angle-down" aria-hidden="true"></i></button>
+                        <div id="dropdownAccount-content" class="dropdownAccount-content">
+                            <a href="#Profile">Profile</a>
+                            <a href="#Logout">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="body" id="body">
+            <div class="sidebar">
+                <div class="sidebar-menu">
+                    <ul>
+                        <li><a href="index.html" target="_self "><i class="fa fa-dashboard" style="color: #0d47a1"></i>
+                                Dashboard</a></li>
+                        <li><a href="student_management.html" target="_self "><i class="fa fa-user"
+                                    style="color: #0d47a1"></i>
+                                Student</a></li>
+                        <li><a href="class_management.html" target="_self"><i class="fa fa-users"
+                                    style="color: #0d47a1"></i>
+                                Class</a></li>
+                        <li><a href="teacher_management.html" target="_self"><i class="fa fa-address-book-o"
+                                    style="color: #0d47a1"></i>
+                                Teacher</a></li>
+                        <li><a href="grade_management.html" target="_self"><i class="fa fa-calculator"
+                                    style="color: #0d47a1"></i>
+                                Grade</a></li>
+                        <li><a href="subject_management.html" target="_self"><i class="fa fa-cube"
+                                    style="color: #0d47a1"></i>
+                                Subject</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="content">
+                <div>
+                    <h1 style="padding: 10px 0 35px 15px">Admin</h1>
+                </div>
+                <div class="card-content">
+                    <div class="card-item">Student</div>
+                    <div class="card-item">Teacher </div>
+                    <div class="card-item">Mark</div>
+                    <div class="card-item">Class</div>
+                    <div class="card-item">Subject</div>
+                </div>
+
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div>
+                <p>&copy; Nguyen Huu Thanh</p>
+            </div>
+
+        </footer>
+    </div>
+</body>
+<script src="../js/index.js"></script>
+</html>
